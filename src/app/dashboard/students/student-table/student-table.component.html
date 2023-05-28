@@ -1,0 +1,80 @@
+<div class="ejem">
+  <h1>Lista estudiantes</h1>
+  <hr>
+</div>
+<div class="export">
+  <button mat-fab extended class="primary" (click)="descargarExcel()">
+    <mat-icon>cloud_download</mat-icon>
+    Exportar excel
+  </button>
+</div>
+
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <mat-form-field>
+      <mat-label> <mat-icon>search</mat-icon> Buscar</mat-label>
+      <input matInput (keyup)="filtrar($event)" placeholder="buscar">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="codigo">
+      <mat-header-cell *matHeaderCellDef> cod. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.codigo}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="apellido">
+      <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.apellido}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo documento">
+      <mat-header-cell *matHeaderCellDef> tipo documento </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.tipo_documento}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="numero documento">
+      <mat-header-cell *matHeaderCellDef> numero documento </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.numero_documento}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="estado">
+      <mat-header-cell *matHeaderCellDef> estado </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.estado}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="genero">
+      <mat-header-cell *matHeaderCellDef> genero </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.genero}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="visualizar()">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="editar()">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="desactivar()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  // lazy loaded dashboard module
+  {
+    path: '',
+    loadChildren: () => import('./dashboard/dashboard-module/dashboard-module.module').then(m => m.DashboardModuleModule)
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

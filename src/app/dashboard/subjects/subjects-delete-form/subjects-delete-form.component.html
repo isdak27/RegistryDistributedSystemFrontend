@@ -1,0 +1,25 @@
+<div class="header-container">
+  <h1 class="title">Desactivar materia <hr></h1>
+</div>
+
+<div class="card">
+  <div class="contenedor">
+
+    <mat-form-field>
+      <mat-label> <mat-icon>search</mat-icon> Codigo materia</mat-label>
+      <input matInput placeholder="buscar">
+    </mat-form-field>
+    <mat-list>
+      <mat-list-item>Nombre materia: nombreAsignatura</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Capacidad: 30</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Estado: activo</mat-list-item>
+    </mat-list>
+    <div class="button-container">
+      <button mat-fab extended (click)="volver()">&nbsp; Volver &nbsp;</button> &nbsp;
+      <button mat-fab extended color="primary">&nbsp; Desactivar &nbsp;</button>
+    </div>
+
+  </div>
+</div>

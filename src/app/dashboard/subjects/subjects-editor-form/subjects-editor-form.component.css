@@ -1,0 +1,43 @@
+.contenedor {
+  display: flex;
+  height: 90%;
+  margin: 10% 2%;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  padding-bottom: 0px;
+  background-color: #f8f8f8;
+}
+
+.data-container{
+  display: block;
+  flex-direction: column;
+  margin:1rem auto;
+  max-width: 900px;
+}
+
+.input-data{
+  width: 48%;
+  margin: 0% 1%;
+}
+
+.button-add{
+  padding-left: 37%;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+  margin: 0% 15%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+

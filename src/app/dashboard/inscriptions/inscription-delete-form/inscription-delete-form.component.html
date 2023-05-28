@@ -1,0 +1,27 @@
+
+<div class="header-container">
+  <h1 class="title">Desactivar inscripcion <hr></h1>
+</div>
+
+<div class="card">
+  <div class="contenedor">
+
+    <mat-form-field>
+      <mat-label> <mat-icon>search</mat-icon> Codigo inscripcion</mat-label>
+      <input matInput placeholder="buscar">
+    </mat-form-field>
+    <mat-list>
+      <mat-list-item>Nombre estudiante: nombreEstudiante</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Nombre asignatura: nombreAsignatura</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Fecha de inscripcion: 12/12/2010</mat-list-item>
+    </mat-list>
+
+    <div class="button-container">
+      <button mat-fab extended (click)="volver()">&nbsp; Volver &nbsp;</button> &nbsp;
+      <button mat-fab extended color="primary">&nbsp; Desactivar &nbsp;</button>
+    </div>
+
+  </div>
+</div>

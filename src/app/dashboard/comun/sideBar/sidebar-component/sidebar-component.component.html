@@ -1,0 +1,40 @@
+<mat-toolbar style="background-color: #482e7c; color: white;">
+  <img src=".\assets\images\registroIcon.png" alt="" style="height: 90%;">
+  <span class="fill-remaining-space">  Registro Academico</span>
+</mat-toolbar>
+
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened="isExpanded">
+    <mat-nav-list>
+
+      <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
+        </mat-icon>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'estudiantes'">
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Estudiantes</span>
+
+      </mat-list-item>
+
+
+      <mat-list-item [routerLink]="'materias'">
+        <mat-icon mat-list-icon>book</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Materias</span>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'inscripciones'">
+        <mat-icon mat-list-icon>assignment</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Inscripciones</span>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

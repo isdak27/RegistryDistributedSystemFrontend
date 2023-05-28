@@ -1,0 +1,28 @@
+<div class="header-container">
+  <h1>Editar asignatura
+    <hr>
+  </h1>
+</div>
+<div class="card">
+  <div class="contenedor">
+
+    <div class="data-container">
+
+      <mat-form-field class="input-data">
+        <input matInput [(ngModel)]="title" type="text" placeholder="Ingrese el nombre de la asignatura">
+      </mat-form-field>
+
+      <mat-form-field class="input-data">
+        <input matInput [(ngModel)]="quotas" type="number" placeholder="Ingrese la capacidad de la asignatura">
+      </mat-form-field>
+
+      <mat-form-field class="input-data">
+        <input matInput [(ngModel)]="actualStatus" type="text" placeholder="Ingrese el estado de la asignatura">
+      </mat-form-field>
+      <div class="button-add">
+        <button mat-fab extended (click)="volver()">&nbsp; Volver &nbsp;</button> &nbsp;
+        <button mat-fab extended color="primary">&nbsp; Editar &nbsp;</button>
+      </div>
+    </div>
+  </div>
+</div>

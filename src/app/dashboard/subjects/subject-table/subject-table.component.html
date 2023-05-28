@@ -1,0 +1,61 @@
+<div class="ejem">
+  <h1>Lista Materias</h1>
+  <hr>
+</div>
+<div class="export">
+  <button mat-fab extended class="primary" (click)="descargarExcel()">
+    <mat-icon>cloud_download</mat-icon>
+    Exportar excel
+  </button>
+</div>
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <mat-form-field>
+      <mat-label> <mat-icon>search</mat-icon> Buscar</mat-label>
+      <input matInput (keyup)="filtrar($event)" placeholder="buscar">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="codigo">
+      <mat-header-cell *matHeaderCellDef> Cod. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.codigo}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="cupos">
+      <mat-header-cell *matHeaderCellDef> Cupos </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.cupos}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="estado">
+      <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.estado}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="editar()">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="desactivar()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

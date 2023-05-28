@@ -1,0 +1,61 @@
+<div class="header-container">
+  <h1>Editar estudiante
+    <hr>
+  </h1>
+</div>
+<div class="card">
+<div class="contenedor">
+  <div class="img-container">
+    <div class="upload-container">
+      <button class="upload-button" mat-fab extended color="primary" (click)="handleImageInput()">
+        <mat-icon>add_photo_alternate</mat-icon>Cargar imagen</button>
+    </div>
+    <div class="image-container" *ngIf="image">
+      <img [src]="image" alt="Imagen cargada">
+    </div>
+  </div>
+
+  <div class="data-container">
+
+    <mat-form-field appearance="fill" class="input-cod">
+      <mat-label>Tipo de documento</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let Document of types" [value]="Document.value">
+          {{Document.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field class="input-cod">
+      <input matInput [(ngModel)]="documentNumber" type="number"
+        placeholder="Ingrese el numero de documento del estudiante">
+    </mat-form-field>
+
+    <mat-form-field class="input-cod">
+      <input matInput [(ngModel)]="code" type="number" placeholder="Ingrese el codigo del estudiante">
+    </mat-form-field>
+
+    <mat-form-field class="input-data">
+      <input matInput [(ngModel)]="fullName" type="text" placeholder="Ingrese el nombre del estudiante">
+    </mat-form-field>
+
+    <mat-form-field class="input-data">
+      <input matInput [(ngModel)]="lastName" type="text" placeholder="Ingrese los apellidos del estudiante">
+    </mat-form-field>
+
+    <mat-form-field class="input-data">
+      <input matInput [(ngModel)]="actualStatus" type="text" placeholder="Ingrese el estado del estudiante">
+    </mat-form-field>
+
+    <mat-form-field class="input-data">
+      <input matInput [(ngModel)]="gender" type="text" placeholder="Ingrese el genero del estudiante">
+    </mat-form-field>
+    <div class="button-add">
+      <button mat-fab extended (click)="volver()">&nbsp; Volver &nbsp;</button> &nbsp;
+    <button mat-fab extended color="primary">&nbsp; Editar &nbsp;</button>
+  </div>
+  </div>
+</div>
+
+</div>
